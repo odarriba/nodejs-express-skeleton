@@ -1,0 +1,22 @@
+{
+  "name": "simplepass",
+  "version": "1.0.0",
+  "description": "A password manager to store your more badass authentication details.",
+  "main": "app.js",
+  "dependencies": {
+    "mongoose": "~3.6.11",
+    "express": "^4.7.1",
+    "method-override": "^2.1.2",
+    "body-parser": "^1.5.1",
+    "sha1" : "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odarriba/simplepass.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/odarriba/simplepass/issues"
+  },
+  "homepage": "https://github.com/odarriba/simplepass#readme"
+}
