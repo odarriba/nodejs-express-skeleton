@@ -1,7 +1,7 @@
 var express = require("express"),
     app = express(),
     bodyParser  = require("body-parser"),
-    methodOverride = require("method-override");
+    methodOverride = require("method-override"),
     mongoose = require('mongoose');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,9 +25,8 @@ users.route('/user/:id')
 
 app.use('/api', users);
 
-var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/simplepass', function(err, res) {
-    if(err) throw err;
+    if(err) { throw err; }
     console.log('[INIT] Connected to MongoDB database');
 });
 
