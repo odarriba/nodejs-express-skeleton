@@ -1,10 +1,13 @@
-var express = require("express"),
-    app = express(),
-    expressSession = require('express-session'),
+express = require("express"),
+app = express();
+
+var expressSession = require('express-session'),
     bodyParser  = require("body-parser"),
     methodOverride = require("method-override"),
-    mongoose = require('mongoose'),
-    config = require('./config');
+    mongoose = require('mongoose');
+
+// Load the configuration
+config = require('./config');
 
 app.use(expressSession({secret: config.app.secretKey, resave: false, saveUninitialized: false}));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,19 +17,8 @@ app.use(methodOverride());
 // Load (and execute) the initializers
 require('./initializers');
 
-// API routes
-var users = express.Router();
-
-users.route('/users')
-  .get(controllers.users.findAllUsers)
-  .post(controllers.users.addUser);
-
-users.route('/user/:id')
-  .get(controllers.users.findById)
-  .put(controllers.users.updateUser)
-  .delete(controllers.users.deleteUser);
-
-app.use('/api', users);
+// Load the routes
+require('./routes');
 
 // Create base MongoDB URL
 var dbUrl = config.database.server+'/'+config.database.database;
