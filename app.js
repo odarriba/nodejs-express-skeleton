@@ -11,20 +11,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-var UserModel = require('./models/user');
-var UserCtrl = require('./controllers/users');
+// Load (and execute) the initializers
+require('./initializers');
 
 // API routes
 var users = express.Router();
 
 users.route('/users')
-  .get(UserCtrl.findAllUsers)
-  .post(UserCtrl.addUser);
+  .get(controllers.users.findAllUsers)
+  .post(controllers.users.addUser);
 
 users.route('/user/:id')
-  .get(UserCtrl.findById)
-  .put(UserCtrl.updateUser)
-  .delete(UserCtrl.deleteUser);
+  .get(controllers.users.findById)
+  .put(controllers.users.updateUser)
+  .delete(controllers.users.deleteUser);
 
 app.use('/api', users);
 
@@ -42,7 +42,7 @@ mongoose.connect('mongodb://'+dbUrl, function(err, res) {
     console.log('[INIT] Connected to MongoDB database at '+dbUrl);
 });
 
-var models = require('./models/user')(app, mongoose);
+// var models = require('./models/user')(app, mongoose);
 
 app.listen(3000, function() {
   console.log("[INIT] Webserver server running on http://0.0.0.0:3000");
