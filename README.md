@@ -27,13 +27,13 @@ Controllers are automatically loaded from `controllers` directory and made avail
 
 The controller file name follows the Rails convention, for example `users_controller.js` in teh case of a controller to manage users. That controller would be available at the variable `controllers.users`.
 
-In case that a controller's name is comoposed by various words (p.e. `my_users_controller.js`), it would be loaded as `controllers.myUsers`.
+In case that a controller's name is composed by various words (p.e. `my_users_controller.js`), it would be loaded as `controllers.myUsers`.
 
 ## Routes
 Routes are created in the Express.js standard way, but they are placed in the `routes.js` file.
 
 ## License
-This repository (and all the contents on it) is licensed under the MIT license.
+This repository and all the contents on it are licensed under the MIT license.
 
 ## Contributors
 
