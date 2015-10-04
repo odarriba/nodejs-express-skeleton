@@ -2,8 +2,8 @@
 This project is a basic skeleton to be used when creating NodeJS & Express applications.
 
 It uses a Rails-like architecture, providing some aspects like:
-* Initialization code under the folder `initializers`
-* Autoloading of models and controllers under the folders `models` and `controllers`
+* Initialization code under the folder `/initializers`
+* Autoloading of models and controllers under the folders `/models` and `/controllers`
 * Routes configuration in `routes.js` file.
 * (Many more to come)
 
@@ -18,12 +18,12 @@ To create a new initialization module you only have to create a javascript file 
 ## Autoloading of models and controllers
 
 ### Models
-Models are automatically loaded from `models` directory. All of them are automatically available in the `models` global variable.
+Models are automatically loaded from `/models` directory. All of them are automatically available in the `models` global variable.
 
 If the model name is composed by various words (p.e. `my_model.js`) it would be automatically converted to a name that follows the Javascript convention. In this example case, the model would be available at the variable `models.myName`.
 
 ### Controllers
-Controllers are automatically loaded from `controllers` directory and made available under the `controllers` variable.
+Controllers are automatically loaded from `/controllers` directory and made available under the `controllers` variable.
 
 The controller file name follows the Rails convention, for example `users_controller.js` in teh case of a controller to manage users. That controller would be available at the variable `controllers.users`.
 
