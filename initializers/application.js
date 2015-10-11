@@ -1,14 +1,14 @@
 'use strict';
 
 module.exports = function(app) {
-  var expressSession = require('express-session'),
+  var cookieSession = require('cookie-session'),
       bodyParser  = require("body-parser"),
       morgan = require("morgan"),
       methodOverride = require("method-override"),
       compression = require('compression'),
       config = app.get('config');
 
-  app.use(expressSession({secret: config.app.secret, resave: false, saveUninitialized: false}));
+  app.use(cookieSession({secret: config.app.secret}));
 
   app.set('views', config.root + '/server/views');
   app.engine('html', require('ejs').renderFile);
