@@ -25,10 +25,11 @@ A common configuration hash can be found in `/config/index.js`, and the specific
 In this files we can find configuration of the database connection, application general configuration, etc.
 
 The configuration object is available globally stored in Express object:
-``` var app = express();
+
+```javascript 
+var app = express();
 var config = app.get('config');
 ```
-
 
 ## Autoloading of models and controllers
 
