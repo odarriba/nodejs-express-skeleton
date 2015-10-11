@@ -10,8 +10,6 @@
     "lodash": "^3.10.1",
     "method-override": "^2.1.2",
     "mongoose": "~3.6.11",
-    "passport": "^0.3.0",
-    "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "require-all": "^1.1.0",
     "sha1": "^1.1.0"
