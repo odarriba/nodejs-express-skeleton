@@ -5,11 +5,14 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.5.1",
+    "compression": "^1.6.0",
+    "ejs": "^2.3.4",
     "express": "^4.7.1",
     "express-session": "^1.11.3",
     "lodash": "^3.10.1",
     "method-override": "^2.1.2",
     "mongoose": "~3.6.11",
+    "morgan": "^1.6.1",
     "path": "^0.12.7",
     "require-all": "^1.1.0",
     "sha1": "^1.1.0"
