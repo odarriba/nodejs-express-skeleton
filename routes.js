@@ -7,18 +7,24 @@
  * To create a new route, instantiate a new express router, add
  * it's configuration and attach it to the application.
  */
+ 
+'use strict';
 
-// Router for the users-related petitions.
-var usersRouter = express.Router();
+module.exports = function(app) {
+  var express = require("express");
 
-usersRouter.route('/users')
-  .get(controllers.users.findAllUsers)
-  .post(controllers.users.addUser);
+  // User-related routes
+  var usersRouter = express.Router();
 
-usersRouter.route('/user/:id')
-  .get(controllers.users.findById)
-  .put(controllers.users.updateUser)
-  .delete(controllers.users.deleteUser);
+  usersRouter.route('/users')
+    .get(controllers.users.findAllUsers)
+    .post(controllers.users.addUser);
 
-// Attach the router
-app.use('/api', usersRouter);
+  usersRouter.route('/user/:id')
+    .get(controllers.users.findById)
+    .put(controllers.users.updateUser)
+    .delete(controllers.users.deleteUser);
+
+  // Attach the router
+  app.use('/api', usersRouter);
+};

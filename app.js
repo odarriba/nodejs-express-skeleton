@@ -1,5 +1,7 @@
-express = require("express"),
-app = express();
+'use strict';
+
+var express = require("express"),
+    app = express();
 
 // Load the configuration
 config = require('./config');

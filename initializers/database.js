@@ -1,15 +1,19 @@
-var mongoose = require('mongoose');
+'use strict';
 
-// Create base MongoDB URL
-var dbUrl = config.database.server+'/'+config.database.database;
+module.exports = function(app) {
+  var mongoose = require('mongoose');
 
-// If there are login credentials, use them
-if (config.database.username !== null) {
-  dbUrl = config.database.username+':'+config.database.password+'@'+dbUrl;
-}
+  // Create base MongoDB URL
+  var dbUrl = config.database.server+'/'+config.database.database;
 
-// Connect!
-mongoose.connect('mongodb://'+dbUrl, function(err, res) {
-    if(err) { throw err; }
-    console.log('[INIT] Connected to MongoDB database at '+dbUrl);
-});
+  // If there are login credentials, use them
+  if (config.database.username !== null) {
+    dbUrl = config.database.username+':'+config.database.password+'@'+dbUrl;
+  }
+
+  // Connect!
+  mongoose.connect('mongodb://'+dbUrl, function(err) {
+      if(err) { throw err; }
+      console.log('[INIT] Connected to MongoDB database at '+dbUrl);
+  });
+};
