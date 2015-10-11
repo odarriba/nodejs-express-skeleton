@@ -6,7 +6,7 @@ module.exports = function(app) {
       methodOverride = require("method-override"),
       config = app.get('config');
 
-  app.use(expressSession({secret: config.app.secretKey, resave: false, saveUninitialized: false}));
+  app.use(expressSession({secret: config.app.secret, resave: false, saveUninitialized: false}));
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(methodOverride());
