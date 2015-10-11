@@ -3,7 +3,6 @@
 module.exports = function(app) {
   var cookieSession = require('cookie-session'),
       bodyParser  = require("body-parser"),
-      morgan = require("morgan"),
       methodOverride = require("method-override"),
       compression = require('compression'),
       config = app.get('config');
