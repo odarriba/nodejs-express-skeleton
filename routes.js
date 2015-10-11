@@ -7,11 +7,12 @@
  * To create a new route, instantiate a new express router, add
  * it's configuration and attach it to the application.
  */
- 
+
 'use strict';
 
 module.exports = function(app) {
-  var express = require("express");
+  var express = require("express"),
+      controllers = app.get('controllers');
 
   // User-related routes
   var usersRouter = express.Router();

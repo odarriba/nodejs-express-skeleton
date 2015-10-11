@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = function(app) {
-  var mongoose = require('mongoose');
+  var mongoose = require('mongoose'),
+      config = app.get('config');
 
   // Create base MongoDB URL
   var dbUrl = config.database.server+'/'+config.database.database;

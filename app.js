@@ -4,13 +4,13 @@ var express = require("express"),
     app = express();
 
 // Load the configuration
-config = require('./config');
+app.set('config', require('./config'));
 
 // Load (and execute) the initializers
-require('./initializers');
+require('./initializers')(app);
 
 // Load the routes
-require('./routes');
+require('./routes')(app);
 
 app.listen(3000, function() {
   console.log("[INIT] Webserver server running on http://0.0.0.0:3000");

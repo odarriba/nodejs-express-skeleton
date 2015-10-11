@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
   // Auto load all the models in the /models folder
-  models = require('require-all')({
+  app.set('models', require('require-all')({
     dirname     :  __dirname + '/../models',
     filter      :  /(.+)\.js$/,
     excludeDirs :  /^\.(git|svn)$/,
@@ -11,5 +11,5 @@ module.exports = function(app) {
           return match.replace('_','').toUpperCase();
       });
     }
-  });
+  }));
 };
