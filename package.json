@@ -1,7 +1,7 @@
 {
-  "name": "simplepass",
+  "name": "nodejs-express-skeleton",
   "version": "1.0.0",
-  "description": "A password manager to store your more badass authentication details.",
+  "description": "A Rails-like web application skeleton using NodeJS, Express and Mongoose.",
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.5.1",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/odarriba/simplepass.git"
+    "url": "git+https://github.com/odarriba/nodejs-express-skeleton.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/odarriba/simplepass/issues"
+    "url": "https://github.com/odarriba/nodejs-express-skeleton/issues"
   },
-  "homepage": "https://github.com/odarriba/simplepass#readme"
+  "homepage": "https://github.com/odarriba/nodejs-express-skeleton#readme"
 }
